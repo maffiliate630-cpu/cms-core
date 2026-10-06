@@ -1,0 +1,30 @@
+{
+    "name": "digitanollc/cms-core",
+    "description": "Core package for CMS",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "ext-pdo": "*",
+        "laravel/framework": "^12.0|^13.0",
+        "spatie/laravel-multitenancy": "^4.2",
+        "spatie/laravel-permission": "^6.25|^7.2|^8.3",
+        "spatie/laravel-medialibrary": "^11.23.8",
+        "kalnoy/nestedset": "^6.0|^7.0",
+        "laravel/sanctum": "^4.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "CMSCore\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CMSCore\\Providers\\CMSCoreServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
