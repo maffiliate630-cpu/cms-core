@@ -8,4 +8,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Shared domain library for the CMS monorepo (`digitanollc/cms-core`, namespace `CMSCore\`). Both `cms-admin` and `cms-api` depend on it; there is no dependency or shared code between `cms-admin` and `cms-api` directly — their only connection is this package and the shared PostgreSQL database (schema owned by `cms-admin`).
+Shared domain library for the CMS monorepo (`affiliate-bus/cms-core`, namespace `CMSCore\`). Both `cms-admin` and `cms-api` depend on it; there is no dependency or shared code between `cms-admin` and `cms-api` directly — their only connection is this package and the shared PostgreSQL database (schema owned by `cms-admin`).

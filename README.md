@@ -1,6 +1,6 @@
 # cms-core
 
-Shared domain library for the CMS monorepo. Published as `digitanollc/cms-core`.
+Shared domain library for the CMS monorepo. Published as `affiliate-bus/cms-core`.
 
 **Namespace:** `CMSCore\`
 **Auto-discovered via:** `CMSCore\Providers\CMSCoreServiceProvider`
@@ -11,7 +11,7 @@ Shared domain library for the CMS monorepo. Published as `digitanollc/cms-core`.
 
 ```
 cms-admin ──┐
-            ├── cms-core (digitanollc/cms-core)
+            ├── cms-core (affiliate-bus/cms-core)
 cms-api   ──┘
 ```
 
@@ -83,12 +83,12 @@ Both `cms-admin` and `cms-api` consume this package from a local path (monorepo)
         }
     ],
     "require": {
-        "digitanollc/cms-core": "dev-main"
+        "affiliate-bus/cms-core": "dev-main"
     }
 }
 ```
 
-Composer creates a **symlink** from `vendor/digitanollc/cms-core` → `../../cms-core`, so changes to cms-core source files are immediately visible without reinstalling. There is no need to publish or push to a registry during local development.
+Composer creates a **symlink** from `vendor/affiliate-bus/cms-core` → `../../cms-core`, so changes to cms-core source files are immediately visible without reinstalling. There is no need to publish or push to a registry during local development.
 
 ---
 
