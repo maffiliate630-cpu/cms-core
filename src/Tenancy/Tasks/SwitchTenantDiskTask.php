@@ -26,6 +26,7 @@ class SwitchTenantDiskTask implements SwitchTenantTask
                 'secret'                  => config('filesystems.disks.s3.secret'),
                 'region'                  => config('filesystems.disks.s3.region'),
                 'bucket'                  => config('filesystems.disks.s3.bucket'),
+                'url'                     => config('filesystems.disks.s3.url'),
                 'endpoint'                => config('filesystems.disks.s3.endpoint'),
                 'use_path_style_endpoint' => config('filesystems.disks.s3.use_path_style_endpoint'),
                 // Scopes every object this disk instance touches under tenants/{identifier}/,
