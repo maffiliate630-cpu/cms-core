@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -142,13 +143,16 @@ class Term extends TenantModel implements HasMedia
     }
 
     /**
-     * Falls back to the legacy `cover_image` string column until existing
-     * rows are backfilled into the media library.
+     * Resolves tenant-relative keys while existing URL records are migrated.
      */
     protected function coverImageUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl('cover_image') ?: $this->cover_image,
+            get: fn () => $this->getFirstMediaUrl('cover_image') ?: (
+                $this->cover_image && ! filter_var($this->cover_image, FILTER_VALIDATE_URL)
+                    ? Storage::disk(config('media.tenant_disk'))->url($this->cover_image)
+                    : $this->cover_image
+            ),
         );
     }
 }
